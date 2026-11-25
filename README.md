@@ -5,7 +5,35 @@ The offline build kit for the Docker image `readystack/virtapi:v1.9.1-CE-debian1
 - Release: [v1.9.1-CE-debian12-r2](https://github.com/readystack-dev/virtapi/releases/tag/v1.9.1-CE-debian12-r2)
 - Image: [`docker.io/readystack/virtapi:v1.9.1-CE-debian12-r2`](https://hub.docker.com/r/readystack/virtapi/tags), manifest digest `sha256:38ee20d8459ac3344e048c09fb4295a29ad9615f08037dfb8a2e651cee253ae2`
 - Product page: https://readystack.dev/products/virtapi
+- Source and build recipe: https://readystack.dev/products/virtapi/recipe
+- Build trail: https://readystack.dev/products/virtapi/trail/v1.9.1-CE-debian12-r2
 - Defects: this repository's Issues (defects recorded from 25 November 2026 on) and https://readystack.dev/defects.html?product=virtapi
+
+## The image
+
+the API server KubeVirt registers with Kubernetes for its subresources (console, VNC, port-forward, migration) and the validating and mutating webhooks for KubeVirt's custom resources.
+
+## Who uses virt-api and why
+
+Kubernetes cluster administrators who run virtual machines in their clusters with KubeVirt.
+
+virt-api is KubeVirt's API server and the entry point for virtualisation requests. It fills in defaults for virtual machine definitions and validates them.
+
+A typical use: When a user creates or changes a virtual machine in a cluster running KubeVirt, the request passes through virt-api, which applies default settings and rejects invalid definitions before they are stored as Kubernetes resources.
+
+From the upstream project's own description: https://github.com/kubevirt/kubevirt/blob/main/docs/components.md, https://github.com/kubevirt/kubevirt.
+
+## This release
+
+- Docker Scout policy grade at release: **A** (94%), graded 2026-11-08 with `docker scout policy` (CLI 1.26.0, docker-default configuration).
+  - Docker Scout counts 3 packages with copyleft licences (GPL, LGPL), all of them operating-system packages (it counts only packages whose licence it can read; the SBOM lists every component).
+- Signed with ReadyStack's release key (fingerprint `04daa92344a52dbc`): https://readystack.dev/keys/cosign.pub.
+- Runs as a non-root user (`1001`).
+- Attestations on the image: an SPDX SBOM and SLSA provenance v1.
+- Rebuilt from this kit with network egress blocked on 2026-11-08; the rebuilt image digest is the published one.
+- Base: Debian 12.
+
+The current grade, measured again every day, is on https://readystack.dev/products/virtapi.
 
 virt-api is distributed under its upstream licence (Apache-2.0); the kit contains upstream's source under that licence, and each vendored component under its own.
 
@@ -39,3 +67,5 @@ The build trail (`ReadyStack-virtapi-v1.9.1-CE-debian12-r2.trail.json`, signed t
 ## This repository
 
 `recipe/` holds the kit's recipe files (Dockerfiles, build scripts, pins) as published at https://readystack.dev/products/virtapi/recipe. The complete kit is the release download. Each release is a tag here.
+
+— ReadyStack · https://readystack.dev
