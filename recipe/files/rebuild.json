@@ -1,0 +1,36 @@
+{
+  "bases": [
+    {
+      "digest": "sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8",
+      "layout": "bases/quay.io_kubevirt_builder_2606231619-4fe2cd536f_a48a7dd5a1b8.oci",
+      "ref": "quay.io/kubevirt/builder:2606231619-4fe2cd536f@sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8"
+    }
+  ],
+  "engine": {
+    "archive": "toolchain/buildkit.tar",
+    "image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+    "kind": "buildkit",
+    "tag": "moby/buildkit:v0.31.2"
+  },
+  "inputs": {
+    "context": ".",
+    "dockerfile": "Dockerfile.offline.pinned",
+    "mtime_policy": "clamp",
+    "source_date_epoch": 1791523273,
+    "tree_hash": "sha256:d58969fafd81b554b79be099285ee665f2cf6847456e3ff43d31f6688982aa86"
+  },
+  "probe": {
+    "oneshot": {
+      "args": [
+        "--help"
+      ],
+      "expect": "--console-server-port"
+    }
+  },
+  "schema": "readystack-rebuild-bundle/v0.1",
+  "subject": {
+    "config_digest": "sha256:030e2eff2cecbf7b4b105c3ee3458ee2526fde03041f26b2b538a2efe925e54b",
+    "image_manifest_digest": "sha256:38ee20d8459ac3344e048c09fb4295a29ad9615f08037dfb8a2e651cee253ae2",
+    "name": "docker.io/readystack/virtapi:v1.9.1-CE-debian12-r2"
+  }
+}
