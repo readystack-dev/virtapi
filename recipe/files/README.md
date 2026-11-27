@@ -1,14 +1,16 @@
-# Build kit for `readystack/virtapi:v1.9.1-CE-debian12-r2`
+# Build kit for `readystack/virtapi:v1.9.1-CE-debian12-r3`
 
-This archive rebuilds the linux/amd64 image `readystack/virtapi:v1.9.1-CE-debian12-r2` from its own contents, with the network off, and checks the result against the image digest ReadyStack published, `sha256:38ee20d8459ac3344e048c09fb4295a29ad9615f08037dfb8a2e651cee253ae2` (also in `TARGET_DIGEST.txt`). It holds everything the build needs, not the image itself.
+This archive rebuilds the linux/amd64 image `readystack/virtapi:v1.9.1-CE-debian12-r3` from its own contents, with the network off, and checks the result against the image digest ReadyStack published, `sha256:d99410ac4e7f6c199998267c088b6756c99dbe8f6a9811a002f2ded83ae6acaa` (also in `TARGET_DIGEST.txt`). It holds everything the build needs, not the image itself.
+
+Every release of this kit, its recipe and its defect issues are published at https://github.com/readystack-dev/virtapi; the product page is https://readystack.dev/products/virtapi.
 
 ## Rebuild it
 
 You need linux/amd64 Docker with `buildx` 0.30 or later, `jq` and `tar` (docs/REBUILD.md lists the rest, if any, and the hardware ReadyStack used).
 
 ```
-tar -xpzf ReadyStack-virtapi-v1.9.1-CE-debian12-r2.tar.gz    # -p keeps each file's mode
-cd v1.9.1-CE-debian12-r2
+tar -xpzf ReadyStack-virtapi-v1.9.1-CE-debian12-r3.tar.gz    # -p keeps each file's mode
+cd v1.9.1-CE-debian12-r3
 ./BUILD_OFFLINE.sh            # builds with the network off, from this archive alone
 ./VERIFY_OFFLINE.sh           # compares the rebuilt digest with the published one, then checks the image
 ```
@@ -23,8 +25,8 @@ ReadyStack signs this archive's `rebuild.json` with its release key once the fin
 
 ```
 curl -fsSLo ../cosign.pub https://readystack.dev/keys/cosign.pub
-curl -fsSLo ../ReadyStack-virtapi-v1.9.1-CE-debian12-r2.rebuild.json.sigstore https://readystack.dev/api/kit/virtapi/v1.9.1-CE-debian12-r2/files/ReadyStack-virtapi-v1.9.1-CE-debian12-r2.rebuild.json.sigstore
-python3 docs/rebuild-bundle/rebuild_bundle.py validate . --key ../cosign.pub --signature ../ReadyStack-virtapi-v1.9.1-CE-debian12-r2.rebuild.json.sigstore
+curl -fsSLo ../ReadyStack-virtapi-v1.9.1-CE-debian12-r3.rebuild.json.sigstore https://readystack.dev/api/kit/virtapi/v1.9.1-CE-debian12-r3/files/ReadyStack-virtapi-v1.9.1-CE-debian12-r3.rebuild.json.sigstore
+python3 docs/rebuild-bundle/rebuild_bundle.py validate . --key ../cosign.pub --signature ../ReadyStack-virtapi-v1.9.1-CE-debian12-r3.rebuild.json.sigstore
 ```
 
 `validate` needs Python 3 and cosign. Without building anything it checks the signature over `rebuild.json`, every file's checksum, the tree hash over every file's path, mode and content, each base image layout's digest and the builder archive. `verify`, with the same arguments, also rebuilds with the builder's network egress blocked and exits 0 only when the rebuilt digest is the published one (docs/REBUILD.md).

@@ -1,6 +1,6 @@
-image_manifest_digest=sha256:38ee20d8459ac3344e048c09fb4295a29ad9615f08037dfb8a2e651cee253ae2
-config_digest=sha256:030e2eff2cecbf7b4b105c3ee3458ee2526fde03041f26b2b538a2efe925e54b
-tag=readystack/virtapi:v1.9.1-CE-debian12-r2
+image_manifest_digest=sha256:d99410ac4e7f6c199998267c088b6756c99dbe8f6a9811a002f2ded83ae6acaa
+config_digest=sha256:f7e1e262f5b500e1159a239866b81a816c2f07e76351ef830745e43c9d23b1d9
+tag=readystack/virtapi:v1.9.1-CE-debian12-r3
 probe_port=80
 probe_path=/
 probe_timeout=180

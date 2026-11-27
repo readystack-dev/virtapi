@@ -1,4 +1,4 @@
-# Provenance — virt-api (`v1.9.1-CE-debian12-r2`)
+# Provenance — virt-api (`v1.9.1-CE-debian12-r3`)
 
 Every item below is copied from a record in this archive; the record is named in brackets.
 
@@ -13,18 +13,18 @@ Every item below is copied from a record in this archive; the record is named in
 
 - Method: `source-rebuild-go`; base image `gcr.io/distroless/base-debian12@sha256:ca3f629c350fd1cb653caee7c5aed8967be4e43d9577fbb1cb4ed66c260e224e`
 - Compiled with `--network=none` from vendored source, dependencies and base images; BuildKit pinned to `moby/buildkit:v0.31.2` (shipped in `toolchain/`).
-- SOURCE_DATE_EPOCH: `1791523273` [`SOURCE_DATE_EPOCH.txt`]
+- SOURCE_DATE_EPOCH: `1795617153` [`SOURCE_DATE_EPOCH.txt`]
 - Frozen inputs: [`docs/provenance/FREEZE_MANIFEST.json`], build recipe: [`docs/provenance/BUILD_RECIPE.json`].
 
 ## Output
 
-- Published image: `readystack/virtapi:v1.9.1-CE-debian12-r2` — index digest `sha256:65177dc67dc11ed39de81fa63968e08cc768b7525fcde52aa0c8dc959f670a31` [`docs/provenance/LOCKED_DIGEST.txt`]
-- linux/amd64 image digest `sha256:38ee20d8459ac3344e048c09fb4295a29ad9615f08037dfb8a2e651cee253ae2` — reproduced from this archive before publishing [`docs/provenance/REPRO_VERIFICATION.json`].
+- Published image: `readystack/virtapi:v1.9.1-CE-debian12-r3` — index digest `sha256:af76df068b712edf9f4b42b434345b204211349c3449ec751108df29cf4bd234` [`docs/provenance/LOCKED_DIGEST.txt`]
+- linux/amd64 image digest `sha256:d99410ac4e7f6c199998267c088b6756c99dbe8f6a9811a002f2ded83ae6acaa` — reproduced from this archive before publishing [`docs/provenance/REPRO_VERIFICATION.json`].
 
 ## Attestations and signature
 
 - SBOM + SLSA provenance attached to the image: attached: an SPDX SBOM and SLSA v1 provenance [`docs/provenance/SCOUT_VERDICT.json`]
-- cosign signature by the ReadyStack release key: verified before publishing. Check it: `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtapi:v1.9.1-CE-debian12-r2`
+- cosign signature by the ReadyStack release key: verified before publishing. Check it: `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtapi:v1.9.1-CE-debian12-r3`
 
 ## Pinned inputs, and why
 
@@ -32,5 +32,5 @@ Every item below is copied from a record in this archive; the record is named in
 
 ## Build trail
 
-- How this release passed through the ReadyStack harness, record by record (every chain, drive, stage, review round, defect and check, each naming the record it is copied from): `ReadyStack-virtapi-v1.9.1-CE-debian12-r2.trail.json`, published beside this archive and signed with the release key (`ReadyStack-virtapi-v1.9.1-CE-debian12-r2.trail.json.sigstore`), and readable at https://readystack.dev/products/virtapi/trail/v1.9.1-CE-debian12-r2.
+- How this release passed through the ReadyStack harness, record by record (every chain, drive, stage, review round, defect and check, each naming the record it is copied from): `ReadyStack-virtapi-v1.9.1-CE-debian12-r3.trail.json`, published beside this archive and signed with the release key (`ReadyStack-virtapi-v1.9.1-CE-debian12-r3.trail.json.sigstore`), and readable at https://readystack.dev/products/virtapi/trail/v1.9.1-CE-debian12-r3.
 
